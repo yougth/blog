@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="yougth&#39;s Blog : yougth&#39;s 技术 blog">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>yougth&#39;s Blog</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/yougth/blog">View on GitHub</a>
+
+          <h1 id="project_title">yougth&#39;s Blog</h1>
+          <h2 id="project_tagline">yougth&#39;s 技术 blog</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/yougth/blog/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/yougth/blog/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="简介" class="anchor" href="#%E7%AE%80%E4%BB%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>简介</h1>
+
+<p>本工程是一个基于<a href="http://flask.pocoo.org/">Flask</a>和<a href="https://pythonhosted.org/Markdown/">Python Markdown</a>开发的简易博客。
+本博客支持基本的Markdown语法，并且支持table和Meta信息，具体参见<a href="in/About.md">About.md</a></p>
+
+<h1>
+<a id="工程依赖包安装" class="anchor" href="#%E5%B7%A5%E7%A8%8B%E4%BE%9D%E8%B5%96%E5%8C%85%E5%AE%89%E8%A3%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>工程依赖包安装</h1>
+
+<p>本工程主要依赖于Flask、Jinja2，具体参见requirement.txt</p>
+
+<pre><code>pip install -r requirements.txt
+</code></pre>
+
+<h1>
+<a id="基本用法" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>基本用法</h1>
+
+<ol>
+<li>Python环境搭建及依赖包安装，依赖包参见<code>requirements.txt</code>；</li>
+<li>将你写好的.md文件丢到<code>generate.py</code>中<code>INPUT_CONTENT</code>所配置的目录中，默认为<code>./in</code>目录；</li>
+<li>运行<code>generate.py</code>文件，生成html页面文件和索引文件；</li>
+<li>运行<code>blog.py</code>文件，启动flask网站，用以对外提供访问html文件；</li>
+<li>访问<code>http://127.0.0.1:5000/api/index/generate/</code>生成索引文件；</li>
+<li>访问<code>http://127.0.0.1:5000/upload/</code>上传你编写好的md文件（md文件名请使用英文字母、数字、中划线、下划线的组合）；</li>
+</ol>
+
+<h1>
+<a id="工程结构简介" class="anchor" href="#%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E7%AE%80%E4%BB%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>工程结构简介</h1>
+
+<pre><code>blog
+├─start.sh          -- linux启动脚本
+├─stop.sh           -- linux停止脚本
+├─start.bat         -- windows启动脚本
+├─blog.py           -- flask工程主文件
+├─generate.py       -- Markdown生成html工具
+├─ReadMe.md         -- 本文档
+├─requirements.txt  -- 依赖包
+├─settings.py       -- flask 配置
+│
+├─api           -- 数据查询接口
+├─in
+│  └─About.md   -- 博客撰写方法说明
+│
+├─static        -- 静态资源文件夹
+│  ├─favicon.ico
+│  ├─css
+│  ├─font
+│  ├─fonts
+│  └─js
+├─templates     -- html模板
+└─utils         -- 工具类
+</code></pre>
+
+<h1>
+<a id="示例" class="anchor" href="#%E7%A4%BA%E4%BE%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>示例</h1>
+
+<p><img src="static/images/screenshot.png" alt="screenshot"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">yougth&#39;s Blog maintained by <a href="https://github.com/yougth">yougth</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
